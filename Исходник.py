@@ -11,7 +11,7 @@ inline_kb.add(InlineKeyboardButton('❓', callback_data='button1'))
 inline_kb.add(InlineKeyboardButton('❓', callback_data='button2'))
 inline_kb.add(InlineKeyboardButton('❓', callback_data='button3'))
 inline_kb.add(InlineKeyboardButton('❓', callback_data='button4'))
-inline_kb.add(InlineKeyboardButton('Исходный Код', url="https://github.com/w1n4a/-/blob/main/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA.py"))
+inline_kb.add(InlineKeyboardButton('Исходный Код', url="https://github.com/w1n4a/Bomb-Ground-Code/blob/main/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA.py"))
 
 @bot.message_handler(commands=['start'])
 def game(message):
@@ -45,3 +45,4 @@ def handle_callback(call):
 bot.polling()
 
 #by w1n4a
+
