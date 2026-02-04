@@ -11,7 +11,7 @@ inline_kb.add(InlineKeyboardButton('❓', callback_data='button1'))
 inline_kb.add(InlineKeyboardButton('❓', callback_data='button2'))
 inline_kb.add(InlineKeyboardButton('❓', callback_data='button3'))
 inline_kb.add(InlineKeyboardButton('❓', callback_data='button4'))
-inline_kb.add(InlineKeyboardButton('Исходный Код', callback_data='button5'))
+inline_kb.add(InlineKeyboardButton('Исходный Код', url="https://github.com/w1n4a/-/blob/main/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA.py"))
 
 @bot.message_handler(commands=['start'])
 def game(message):
@@ -29,30 +29,17 @@ def game(message):
 def handle_callback(call):
     if call.data == 'button1':
         plr = 1
-        if boom == plr or boom2 == plr:
-            bot.send_message(call.message.chat.id, "Ты взорвался!\nСледующия ката - /start")
-        else:
-            bot.send_message(call.message.chat.id, "Ты выжил!\nСледующия ката - /start")
     if call.data == 'button2':
         plr = 2
-        if boom == plr or boom2 == plr:
-            bot.send_message(call.message.chat.id, "Ты взорвался!\nСледующия ката - /start")
-        else:
-            bot.send_message(call.message.chat.id, "Ты выжил!\nСледующия ката - /start")
     if call.data == 'button3':
         plr = 3
-        if boom == plr or boom2 == plr:
-            bot.send_message(call.message.chat.id, "Ты взорвался!\nСледующия ката - /start")
-        else:
-            bot.send_message(call.message.chat.id, "Ты выжил!\nСледующия ката - /start")
     if call.data == 'button4':
         plr = 4
-        if boom == plr or boom2 == plr:
-            bot.send_message(call.message.chat.id, "Ты взорвался!\nСледующия ката - /start")
-        else:
-            bot.send_message(call.message.chat.id, "Ты выжил!\nСледующия ката - /start")
-    if call.data == 'button5':
-        bot.send_message(call.message.chat.id, "")
+    
+    if boom == plr or boom2 == plr:
+        bot.send_message(call.message.chat.id, "Ты взорвался!\nСледующия ката - /start")
+    else:
+        bot.send_message(call.message.chat.id, "Ты выжил!\nСледующия ката - /start")
     
 
 bot.polling()
