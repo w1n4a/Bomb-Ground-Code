@@ -45,4 +45,3 @@ def handle_callback(call):
 bot.polling()
 
 #by w1n4a
-
