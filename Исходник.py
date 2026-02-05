@@ -3,7 +3,7 @@ import random
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-bot = telebot.TeleBot('8478806301:AAEhA4G8Zf9Lhy63Tp1shognFlve7SFAClo')
+bot = telebot.TeleBot('Ваш Токен')
 
 inline_kb = InlineKeyboardMarkup()
 inline_kb.add(InlineKeyboardButton('❓', callback_data='4/1'))
@@ -47,3 +47,4 @@ def handle_callback(call):
 bot.polling()
 
 #by w1n4a
+
