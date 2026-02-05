@@ -3,14 +3,13 @@ import random
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-bot = telebot.TeleBot('Ваш Токен')
-
+bot = telebot.TeleBot('8478806301:AAEhA4G8Zf9Lhy63Tp1shognFlve7SFAClo')
 
 inline_kb = InlineKeyboardMarkup()
-inline_kb.add(InlineKeyboardButton('❓', callback_data='button1'))
-inline_kb.add(InlineKeyboardButton('❓', callback_data='button2'))
-inline_kb.add(InlineKeyboardButton('❓', callback_data='button3'))
-inline_kb.add(InlineKeyboardButton('❓', callback_data='button4'))
+inline_kb.add(InlineKeyboardButton('❓', callback_data='4/1'))
+inline_kb.add(InlineKeyboardButton('❓', callback_data='4/2'))
+inline_kb.add(InlineKeyboardButton('❓', callback_data='4/3'))
+inline_kb.add(InlineKeyboardButton('❓', callback_data='4/4'))
 inline_kb.add(InlineKeyboardButton('Исходный Код', url="https://github.com/w1n4a/Bomb-Ground-Code/blob/main/%D0%98%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D0%B8%D0%BA.py"))
 
 @bot.message_handler(commands=['start'])
@@ -27,20 +26,23 @@ def game(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def handle_callback(call):
-    if call.data == 'button1':
+    if call.data == '4/1':
         plr = 1
-    if call.data == 'button2':
+    if call.data == '4/2':
         plr = 2
-    if call.data == 'button3':
+    if call.data == '4/3':
         plr = 3
-    if call.data == 'button4':
+    if call.data == '4/4':
         plr = 4
     
     if boom == plr or boom2 == plr:
         bot.send_message(call.message.chat.id, "Ты взорвался!\nСледующия ката - /start")
+        bot.delete_message(call.message.chat.id, call.message.message_id - 0)
+        bot.delete_message(call.message.chat.id, call.message.message_id - 1)
     else:
         bot.send_message(call.message.chat.id, "Ты выжил!\nСледующия ката - /start")
-    
+        bot.delete_message(call.message.chat.id, call.message.message_id - 0)
+        bot.delete_message(call.message.chat.id, call.message.message_id - 1)
 
 bot.polling()
 
